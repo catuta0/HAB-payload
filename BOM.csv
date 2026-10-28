@@ -20,16 +20,18 @@ J1,1,JST XH 2-pin vertical,2.5 mm,JST,B2B-XH-A(LF)(SN),306-B2BXHALFSNP,https://w
 U2,1,Female header 1x8 2.54 mm,THT,Wurth Elektronik,61300811821,710-61300811821,https://www.mouser.com/ProductDetail/710-61300811821,0.353,EUR,0.35,"pt.mouser.com 2026-10-28, qty 1",INA260
 "U5,MOD1",2,Female header 1x6 2.54 mm,THT,Wurth Elektronik,61300611821,710-61300611821,https://www.mouser.com/ProductDetail/710-61300611821,0.258,EUR,0.52,"pt.mouser.com 2026-10-28, qty 1",MAX31855 and SD module
 "U7,U10",2,Female header 1x4 2.54 mm,THT,Wurth Elektronik,61300411821,710-61300411821,https://www.mouser.com/ProductDetail/710-61300411821,0.361,EUR,0.72,"pt.mouser.com 2026-10-28, qty 1",GPS I2C and GPS UART; solder only the one in use
-"TP1,TP2,TP3,TP4",0,Test pad 1.5 mm,SMD pad,,,,,,,,,"Bare copper pads, nothing to buy"
-"H1,H2,H3,H4",0,M3 mounting hole,3.2 mm,,,,,,,,,Nothing to buy
-U1,1,ESP32-DevKitC V4 38-pin with ESP32-WROOM-32 (not WROVER: IO16/IO17 are used),module,Espressif,ESP32-DevKitC-32E,,,8.78,EUR,8.78,pt.mouser.com 356-ESP32-DEVKITC32E,Bought separately; powered from its 3V3 pin
-U2,1,Adafruit INA260 breakout,module,Adafruit,4226,,,9.95,USD,9.95,adafruit.com,Bought separately; VBUS/IN+/IN- wired off-board to the battery
-U3,1,Adafruit BME280 breakout,module,Adafruit,2652,,,14.95,USD,14.95,adafruit.com,Bought separately
-U4,1,Adafruit LSM6DSOX breakout,module,Adafruit,4438,,,11.95,USD,11.95,adafruit.com,Bought separately
-U5,1,Adafruit MAX31855 thermocouple breakout,module,Adafruit,269,,,14.95,USD,14.95,adafruit.com,Bought separately; needs a type K thermocouple
-U6,1,RFM95W on attexx rfm9x_breakout_board,module,HopeRF / attexx,RFM95W (868 MHz version for EU),,,20.53,EUR,20.53,pt.mouser.com 223-RFM95W-868S2 (RF Solutions; Mouser sells it only to companies in the EU),Bought separately; PCB from github.com/attexx/rfm9x_breakout_board
-U7 or U10,1,GPS NEO-8M breakout (I2C on U7 or UART on U10),module,,,,,,,,,Bought separately; fit only one
-MOD1,1,AZ-Delivery SPI micro SD card module,module,AZ-Delivery,,,,4.49,EUR,4.49,az-delivery.de,Bought separately; powered from 5 V; use an industrial-temperature card
+"TP1,TP2,TP3,TP4",0,Test pad 1.5 mm,SMD pad,,,,not applicable (part of the PCB),,,,,"Bare copper pads, nothing to buy"
+"H1,H2,H3,H4",0,M3 mounting hole,3.2 mm,,,,not applicable (part of the PCB),,,,,Nothing to buy
+U1,1,ESP32-DevKitC V4 38-pin with ESP32-WROOM-32 (not WROVER: IO16/IO17 are used),module,Espressif,ESP32-DevKitC-32E,356-ESP32-DEVKITC32E,https://www.mouser.com/ProductDetail/356-ESP32-DEVKITC32E,8.78,EUR,8.78,pt.mouser.com 356-ESP32-DEVKITC32E,Bought separately; powered from its 3V3 pin
+U2,1,Adafruit INA260 breakout,module,Adafruit,4226,,https://www.adafruit.com/product/4226,9.95,USD,9.95,adafruit.com,Bought separately; VBUS/IN+/IN- wired off-board to the battery
+U3,1,Adafruit BME280 breakout,module,Adafruit,2652,,https://www.adafruit.com/product/2652,14.95,USD,14.95,adafruit.com,Bought separately
+U4,1,Adafruit LSM6DSOX breakout,module,Adafruit,4438,,https://www.adafruit.com/product/4438,11.95,USD,11.95,adafruit.com,Bought separately
+U5,1,Adafruit MAX31855 thermocouple breakout,module,Adafruit,269,,https://www.adafruit.com/product/269,14.95,USD,14.95,adafruit.com,Bought separately; needs a type K thermocouple
+U6,1,RFM95W LoRa module 868 MHz,module,HopeRF / attexx,RFM95W-868S2,,https://soselectronic.com/en/products/rfm95w-868-s2,6.98,EUR,6.98,"soselectronic.com 2026-10-28, excl. VAT",Mounted on the attexx breakout PCB (row below)
+U6 PCB,1,attexx rfm9x_breakout_board rev 1b (bare PCB),PCB,AISLER,,,https://aisler.net/p/BNYBJOFL,,,,price on aisler.net (sold in sets of 3),Design: github.com/attexx/rfm9x_breakout_board; also needs C1 10uF 0805 (use a spare CL21B106KOQNNNE)
+U6 J1,1,SMA female edge-launch jack 50 Ohm for 1.6 mm (0.062 in) PCB,Edge mount,TE Connectivity / Linx,CONSMA003.062-G,712-CONSMA003.062-G,https://www.mouser.com/ProductDetail/712-CONSMA003.062-G,3.84,EUR,3.84,pt.mouser.com 2026-10-28,"Antenna connector on the RFM95 breakout; matches its footprint (centre 1.52 mm, ground legs at 2.54 mm); takes the SMA male of the antenna (not RP-SMA)"
+U7 or U10,1,GPS NEO-8M breakout (I2C on U7 or UART on U10),module,,,,https://www.botnroll.com/en/gps-gnss/5479-uart-gps-neo-8m-w-ceramic-antenna.html,18.9,EUR,18.9,botnroll.com 2026-10-28 (UART version; any NEO-8M breakout with the same pin order works),Fit only one; check the pin order matches VCC RX TX GND (UART) or VCC GND SCL SDA (I2C) before soldering the header
+MOD1,1,AZ-Delivery SPI micro SD card module,module,AZ-Delivery,,,https://www.az-delivery.de/en/products/copy-of-spi-reader-micro-speicherkartenmodul-fur-arduino,4.49,EUR,4.49,az-delivery.de,Bought separately; powered from 5 V; use an industrial-temperature card
 ANT1,1,"868 MHz half-wave dipole antenna 3.2 dBi peak 93% efficiency, -40 to +85 C","SMA male, 389 mm",Taoglas,TI.18.3113,960-TI.18.3113,https://www.mouser.com/ProductDetail/960-TI.18.3113,13.27,EUR,13.27,pt.mouser.com 2026-10-28,"Plugs into the SMA on the RFM95 breakout; no ground plane needed; hinged, tape it straight for flight"
-TOTAL,,,,,,,,,EUR,78.11,"Mouser parts, ESP32, SD module, RFM95W and antenna",
-TOTAL,,,,,,,,,USD,51.8,Adafruit modules (adafruit.com),GPS NEO-8M not priced (ptrobotics); PCB fabrication and shipping not included
+TOTAL,,,,,,,,,EUR,87.3,"All parts priced in EUR (Mouser, ESP32, SD, RFM95W, GPS, SMA, antenna)",
+TOTAL,,,,,,,,,USD,51.8,Adafruit modules (adafruit.com),"attexx PCB, main PCB fabrication and shipping not included"
