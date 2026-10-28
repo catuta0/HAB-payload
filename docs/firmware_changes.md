@@ -10,7 +10,7 @@ The ESP32 is now powered only from its 3V3 pin, and the 5V pin is not connected.
 
 ## New connections
 
-GPS over UART was added on a second header (U10), next to the original I2C header (U7). Only one GPS is fitted. GPS TX goes to GPIO35, the ESP32 RX. GPIO32, the ESP32 TX, goes to GPS RX. Use UART2, for example Serial2.begin(9600, SERIAL_8N1, 35, 32), with 9600 baud as the NEO-8M default. GPIO35 has no pull-up, so with no UART GPS fitted the line floats and can produce garbage bytes. Validate the NMEA checksum, or select the interface at build time. A simple runtime choice is to probe I2C address 0x42 at boot, use I2C if the GPS answers, and fall back to UART otherwise. With a u-blox library (SparkFun u-blox GNSS works for both), the change is only begin(Wire) versus begin(Serial2).
+GPS over UART was added on a second header (U10), next to the original I2C header (U7). Only one GPS is fitted. GPS TX goes to GPIO35, the ESP32 RX. GPIO32, the ESP32 TX, goes to GPS RX. Use UART2, for example Serial2.begin(9600, SERIAL_8N1, 35, 32), with 9600 baud as the NEO-8M default. GPIO35 has no pull-up, so with no UART GPS fitted the line floats and can produce garbage bytes.
 
 RFM95 DIO1 is now wired to GPIO26. It was not connected before. LMIC needs DIO1 for receive timeouts, so its pin map becomes nss 16, rst 27, dio 5 and 26. RadioLib can use it as the second interrupt: Module(16, 5, 27, 26). The other RFM95 pins are unchanged: VSPI with SCK 18, MISO 19, MOSI 23, CS 16, RST 27, DIO0 5.
 
@@ -30,10 +30,10 @@ The SD card stays on HSPI: SCK 14, MOSI 13, MISO 33, CS 17. MISO is on 33, not t
 
 ## Things to set for flight
 
-Put the GPS in Airborne <1g dynamic model (UBX-CFG-NAV5 dynModel 6) at every boot, and save it to battery-backed RAM if the module has a backup cell. In the default portable model the NEO-8M drops the fix above 18 km. This applies to both I2C and UART.
+Put the GPS in Airborne <1g dynamic model (UBX-CFG-NAV5 dynModel 6) at every boot, and save it to battery-backed RAM if the module has a backup cell (install the fucking backup cell!). In the default portable model the NEO-8M drops the fix above 18 km. This applies to both I2C and UART.
 
 Keep the LoRa bandwidth at 125 kHz or more. The RFM95 crystal drifts in the cold, and at narrower bandwidths the drift can take the signal outside the receiver window.
 
-Log SD writes in small appended blocks and flush often, so a power loss on landing costs only the last block. Use an industrial-temperature card.
+Log SD writes in small appended blocks and flush often, so a power loss on landing costs only the last block.
 
 IO0, IO2 and IO12 are left free on purpose because they are boot strapping pins. Do not assign them to anything that could be driven at reset.
