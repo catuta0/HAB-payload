@@ -6,4 +6,4 @@ Power comes from a 3S Li-ion pack (9 to 12.6 V) on J1, through a 1.5 A PTC, a 13
 
 The fast SPI lines run on the top layer with 33 ohm series termination at the source (ESP32 for SCK and MOSI, SD module for MISO). Ground is poured on both layers and stitched, SMD pads connect solid to the pour. Test points TP1 to TP4 give VBAT, 3V3, 5V and GND.
 
-Open hardware/pcbgalapagos.kicad_pro in KiCad 10. The project symbol library (galapagos.kicad_sym) and footprint library (galapagos_fp.pretty) are registered relative to the project folder.
+Open hardware/pcbgalapagos.kicad_pro in KiCad 10. The project symbol library (galapagos.kicad_sym) and footprint library (galapagos_fp.pretty) are registered relative to the project folder. BOM.csv lists every part with its Mouser link (the breakout modules are bought separately), and docs/firmware_changes.md lists what the firmware has to change for this board.

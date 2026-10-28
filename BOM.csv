@@ -1,0 +1,33 @@
+References,Qty,Description,Package,Manufacturer,MPN,Mouser PN,Mouser link,Notes
+"U8,U9",2,TPS62160DGK step-down 3-17V 1A,VSSOP-8 (MSOP-8),Texas Instruments,TPS62160DGKR,595-TPS62160DGKR,https://www.mouser.com/ProductDetail/595-TPS62160DGKR,3.3 V and 5 V bucks
+"L1,L2",2,2.2uH 20% shielded power inductor,4x4 mm (XFL4020),Coilcraft,XFL4020-222MEC,994-XFL4020-222MEC,https://www.mouser.com/ProductDetail/994-XFL4020-222MEC,"Out of stock at Mouser on 2026-10-27; alternative Wurth 74438357022 (710-74438357022, 4.1x4.1 mm) needs its land pattern checked against the XFL4020 footprint"
+F1,1,PTC resettable fuse 1.5A hold 3A trip 16V,1812,Bourns,MF-MSMF150/16X-2,652-MF-MSMF150/16X-2,https://www.mouser.com/ProductDetail/652-MF-MSMF150%2F16X-2,Battery input protection
+D2,1,TVS 13V standoff bidirectional 600W,SMB (DO-214AA),Littelfuse,SMBJ13CA,576-SMBJ13CA,https://www.mouser.com/ProductDetail/576-SMBJ13CA,Battery input protection
+Q11,1,P-MOSFET 30V 4.3A,SOT-23,Diodes Incorporated,DMP3056L-7,621-DMP3056L-7,https://www.mouser.com/ProductDetail/621-DMP3056L-7,Reverse polarity switch
+R5,1,316k 1% 0805,0805,Yageo,RC0805FR-07316KL,603-RC0805FR-07316KL,https://www.mouser.com/ProductDetail/603-RC0805FR-07316KL,3.3 V feedback
+R7,1,523k 1% 0805,0805,Yageo,RC0805FR-07523KL,603-RC0805FR-07523KL,https://www.mouser.com/ProductDetail/603-RC0805FR-07523KL,5 V feedback
+"R6,R8",2,100k 1% 0805,0805,Yageo,RC0805FR-07100KL,603-RC0805FR-07100KL,https://www.mouser.com/ProductDetail/603-RC0805FR-07100KL,Feedback bottom
+"R1,R2,R3,R4,R9",5,33R 1% 0805,0805,Yageo,RC0805FR-0733RL,603-RC0805FR-0733RL,https://www.mouser.com/ProductDetail/603-RC0805FR-0733RL,SPI series termination (R9 on SD MISO at MOD1)
+"C17,C19",2,10uF 50V X7R,1210,TDK,C3225X7R1H106K250AC,810-C3225X7R1H106250,https://www.mouser.com/ProductDetail/810-C3225X7R1H106250,Buck input
+"C18,C21",2,22uF 10V X7R,1206,Murata,GRM31CR71A226KE15L,81-GRM31CR71A226K15L,https://www.mouser.com/ProductDetail/81-GRM31CR71A226K15L,3.3 V buck output and pi filter
+"C20,C23,C25",3,22uF 16V X7R,1206,Murata,GRM31CZ71C226ME15L,81-GRM31CZ71C226ME5L,https://www.mouser.com/ProductDetail/81-GRM31CZ71C226ME5L,"5 V buck output, pi filter, SD bulk"
+"C15,C16,C22,C24",4,100uF 10V polymer tantalum 55mOhm,7343-31 (D),KEMET,T520D107M010ATE055,80-T520D107M10E55,https://www.mouser.com/ProductDetail/80-T520D107M10E55,"Solid polymer, -55 to +105 C"
+"C2,C4,C6,C8,C10,C14",6,10uF 16V X7R,0805,Samsung,CL21B106KOQNNNE,187-CL21B106KOQNNNE,https://www.mouser.com/ProductDetail/187-CL21B106KOQNNNE,Module local decoupling
+"C1,C3,C5,C7,C9,C13",6,100nF 50V X7R,0805,Samsung,CL21B104KBCNNNC,187-CL21B104KBCNNNC,https://www.mouser.com/ProductDetail/187-CL21B104KBCNNNC,Module local decoupling
+"FB1,FB2",2,Ferrite 120R@100MHz 3.5A,1206,Murata,BLM31PG121SN1L,81-BLM31PG121SN1L,https://www.mouser.com/ProductDetail/81-BLM31PG121SN1L,Buck pi filter
+"FB3,FB4,FB5",3,Ferrite 220R@100MHz 1.4A,0603,Murata,BLM18PG221SN1D,81-BLM18PG221SN1D,https://www.mouser.com/ProductDetail/81-BLM18PG221SN1D,"GPS, RFM95 and MAX31855 supply"
+J1,1,JST XH 2-pin vertical,2.5 mm,JST,B2B-XH-A(LF)(SN),306-B2BXHALFSNP,https://www.mouser.com/ProductDetail/306-B2BXHALFSNP,Battery input
+"U1,U3,U4,U6",4,Female header 1x20 2.54 mm,THT,Wurth Elektronik,61302011821,710-61302011821,https://www.mouser.com/ProductDetail/710-61302011821,"Cut to length (each cut loses one position): two strips of 19 for the ESP32, one strip for U4 (9) + U3 (7), one strip for the two 1x7 rows of U6"
+U2,1,Female header 1x8 2.54 mm,THT,Wurth Elektronik,61300811821,710-61300811821,https://www.mouser.com/ProductDetail/710-61300811821,INA260
+"U5,MOD1",2,Female header 1x6 2.54 mm,THT,Wurth Elektronik,61300611821,710-61300611821,https://www.mouser.com/ProductDetail/710-61300611821,MAX31855 and SD module
+"U7,U10",2,Female header 1x4 2.54 mm,THT,Wurth Elektronik,61300411821,710-61300411821,https://www.mouser.com/ProductDetail/710-61300411821,GPS I2C and GPS UART; solder only the one in use
+"TP1,TP2,TP3,TP4",0,Test pad 1.5 mm,SMD pad,,,,,"Bare copper pads, nothing to buy"
+"H1,H2,H3,H4",0,M3 mounting hole,3.2 mm,,,,,Nothing to buy
+U1,1,ESP32-DevKitC V4 38-pin with ESP32-WROOM-32 (not WROVER: IO16/IO17 are used),module,Espressif,ESP32-DevKitC-32E,,,Bought separately; powered from its 3V3 pin
+U2,1,Adafruit INA260 breakout,module,Adafruit,4226,,,Bought separately; VBUS/IN+/IN- wired off-board to the battery
+U3,1,Adafruit BME280 breakout,module,Adafruit,2652,,,Bought separately
+U4,1,Adafruit LSM6DSOX breakout,module,Adafruit,4438,,,Bought separately
+U5,1,Adafruit MAX31855 thermocouple breakout,module,Adafruit,269,,,Bought separately; needs a type K thermocouple
+U6,1,RFM95W on attexx rfm9x_breakout_board,module,HopeRF / attexx,RFM95W (868 MHz version for EU),,,Bought separately; PCB from github.com/attexx/rfm9x_breakout_board
+"U7 or U10",1,GPS NEO-8M breakout (I2C on U7 or UART on U10),module,,,,,Bought separately; fit only one
+MOD1,1,AZ-Delivery SPI micro SD card module,module,AZ-Delivery,,,,Bought separately; powered from 5 V; use an industrial-temperature card
