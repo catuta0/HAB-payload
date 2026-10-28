@@ -30,7 +30,7 @@ The SD card stays on HSPI: SCK 14, MOSI 13, MISO 33, CS 17. MISO is on 33, not t
 
 ## Things to set for flight
 
-Put the GPS in Airborne <1g dynamic model (UBX-CFG-NAV5 dynModel 6) at every boot, and save it to battery-backed RAM if the module has a backup cell (install the fucking backup cell!). In the default portable model the NEO-8M drops the fix above 18 km. This applies to both I2C and UART.
+Put the GPS in Airborne <1g dynamic model (UBX-CFG-NAV5 dynModel 6) at every boot, and save it to battery-backed RAM if the module has a backup cell (make sure the backup cell is fitted). In the default portable model the NEO-8M drops the fix above 18 km. This applies to both I2C and UART.
 
 Keep the LoRa bandwidth at 125 kHz or more. The RFM95 crystal drifts in the cold, and at narrower bandwidths the drift can take the signal outside the receiver window.
 
@@ -38,5 +38,6 @@ Log SD writes in small appended blocks and flush often, so a power loss on landi
 
 IO0, IO2 and IO12 are left free on purpose because they are boot strapping pins. Do not assign them to anything that could be driven at reset.
 
-## Power suply
-If the esp doest doest get power when conected cut the conection to 3.3v in the pcb and conect de 5v to usb 
+## Power supply
+
+If the ESP32 does not power up from the 3V3 pin, cut the 3V3 track to the ESP32 on the PCB and power it from its USB port (5 V) instead. Never power the ESP32 from the 3V3 pin and USB at the same time: Espressif allows only one supply at a time, and two supplies can damage the board or the source. 
