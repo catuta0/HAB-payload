@@ -37,3 +37,6 @@ Keep the LoRa bandwidth at 125 kHz or more. The RFM95 crystal drifts in the cold
 Log SD writes in small appended blocks and flush often, so a power loss on landing costs only the last block.
 
 IO0, IO2 and IO12 are left free on purpose because they are boot strapping pins. Do not assign them to anything that could be driven at reset.
+
+## Power suply
+If the esp doest doest get power when conected cut the conection to 3.3v in the pcb and conect de 5v to usb 
