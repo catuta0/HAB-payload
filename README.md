@@ -1,9 +1,9 @@
 # hab-payload
 
-Carrier PCB for a high-altitude balloon payload. An ESP32 DevKit plugs into the board together with breakout modules for GPS (NEO), INA226 power monitor, BME280, LSM6DS IMU, MAX31855 thermocouple amplifier, RFM95 LoRa radio and an SPI SD card. All modules sit on female headers.
+Carrier PCB for a high-altitude balloon payload. An ESP32 DevKitC V4 (WROOM-32) plugs into the board together with breakout modules for GPS (NEO-8M, I2C or UART header, fit only one), INA260 power monitor, BME280, LSM6DSOX IMU, MAX31855 thermocouple amplifier, RFM95 LoRa radio and an SPI SD card. All modules sit on female headers. The ESP32 is powered from 3.3 V only; its 5 V pin is not connected.
 
-Power comes from a rechargeable Li-ion pack (2S or 3S, with its own protection BMS, charged off-board) on J1 and feeds two TPS62160 bucks in parallel, one at 3.3 V and one at 5 V. Each buck output goes through a pi filter (ferrite, 22 uF X7R, 100 uF solid polymer) with the feedback taken before the ferrite. The GPS, RFM95 and MAX31855 supplies have their own local ferrite. Every passive is ceramic X7R or solid polymer tantalum, with no liquid electrolytics, so the board is rated for operation below 0 C.
+Power comes from a 3S Li-ion pack (9 to 12.6 V) on J1, through a 1.5 A PTC, a 13 V TVS and a P-MOSFET reverse polarity switch, into two TPS62160 bucks at 3.3 V and 5 V. Each buck output goes through a pi filter (ferrite, X7R, solid polymer) with the feedback taken before the ferrite, and the GPS, RFM95 and MAX31855 supplies have their own local ferrite. All capacitors are X7R or solid polymer, with no liquid electrolytics, for operation below 0 C.
 
-The fast SPI lines run on the top layer only, with no vias and no bottom copper under them, and keep at least 0.75 mm from other tracks. SCK and MOSI of both SPI buses have 33 ohm series termination at the ESP32. Ground is poured on both layers and stitched, and every signal via has a ground via next to it.
+The fast SPI lines run on the top layer with 33 ohm series termination at the source (ESP32 for SCK and MOSI, SD module for MISO). Ground is poured on both layers and stitched, SMD pads connect solid to the pour. Test points TP1 to TP4 give VBAT, 3V3, 5V and GND.
 
-The KiCad 10 project is in hardware (open pcbgalapagos.kicad_pro). BOM.csv lists every part with its Mouser link; the breakout modules are bought separately. Rendered previews are in docs.
+Open hardware/pcbgalapagos.kicad_pro in KiCad 10. The project symbol library (galapagos.kicad_sym) and footprint library (galapagos_fp.pretty) are registered relative to the project folder.
