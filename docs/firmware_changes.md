@@ -40,4 +40,4 @@ IO0, IO2 and IO12 are left free on purpose because they are boot strapping pins.
 
 ## Power supply
 
-If the ESP32 does not power up from the 3V3 pin, cut the 3V3 track to the ESP32 on the PCB and power it from its USB port (5 V) instead. Never power the ESP32 from the 3V3 pin and USB at the same time: Espressif allows only one supply at a time, and two supplies can damage the board or the source. 
+If the ESP32 does not power up from the 3V3 pin, cut the 3V3 track to the ESP32 on the PCB and power it from its USB port (5 V) instead. Never power the ESP32 from the 3V3 pin and USB at the same time.
